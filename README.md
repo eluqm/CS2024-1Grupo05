@@ -78,4 +78,6 @@ La obesidad infantil y de adolescentes está en aumento en el Perú, donde se ob
   ### Mockup 1
   
   ![Mockup 1](/RecursosDocumentacion/mockup1.png)
+
+  ### Mockup 2
   ![Leyenda](/RecursosDocumentacion/leyenda.png)
