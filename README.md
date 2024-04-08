@@ -71,8 +71,7 @@ La obesidad infantil y de adolescentes está en aumento en el Perú, donde se ob
 
   - Caso de uso: Iniciar Juego
     
-  ![Diagrama 1](https://github.com/gvarlasalle/NutriDash/assets/107903082/166ed507-98bc-4baf-a484-84cb0b6cdf70)
-  
+  ![Diagrama 1](/RecursosDocumentacion/Diagrama1v2.png)
 
 - ### Mockups
   ### Mockup 1
