@@ -101,10 +101,10 @@ La obesidad infantil y de adolescentes está en aumento en el Perú, donde se ob
   ### Mockup 6
   ![Leyenda](/RecursosDocumentacion/mockup4.png)
 
-  ### Mockup 7 (Implementación)
+  ### Mockup 7 (Implementación - Pantalla Menú Inicial)
   ![Leyenda](/RecursosDocumentacion/mockup_juego_1.png)
 
-  ### Mockup 8 (Implementación)
+  ### Mockup 8 (Implementación - Pantalla Registrarse)
   ![Leyenda](/RecursosDocumentacion/mockup_juego_2.png)
 
 
