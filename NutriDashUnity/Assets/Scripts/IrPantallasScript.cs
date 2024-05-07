@@ -7,6 +7,7 @@ public class MenuInicialScript : MonoBehaviour
 {
     public void Jugar()
     {
+        // Carga la escena con el índice especificado
         SceneManager.LoadScene(1);
     }
 
