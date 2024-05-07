@@ -11,6 +11,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     // Transform del objeto que verifica si el personaje está en el suelo.
     public Transform groundCheck;
+    // Capa en la que se encuentra el suelo.
     public LayerMask groundLayer;
     public float groundCheckRadius;
 
