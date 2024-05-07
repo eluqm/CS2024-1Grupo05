@@ -24,6 +24,7 @@ public class Registro : MonoBehaviour
         // Verifica si los campos de texto no están vacíos
         if (m_txtUusario.text != "" && m_txtContrasena.text != "")
         {
+         // Crea un formulario WWWForm para enviar los datos al servidor
             WWWForm form = new WWWForm();
             form.AddField("nombre", m_txtUusario.text);
             form.AddField("contrasena", m_txtContrasena.text);
