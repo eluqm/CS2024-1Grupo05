@@ -13,7 +13,7 @@ public class TestingKeys : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Getting keyboard button events
+        // Obtener eventos de teclado
 
         if (Input.GetKeyDown(KeyCode.Space)) {
             Debug.Log("Using Keycode. You can use this to make the player jump");
