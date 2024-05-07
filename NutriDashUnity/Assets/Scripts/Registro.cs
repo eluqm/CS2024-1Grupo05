@@ -15,6 +15,7 @@ public class Registro : MonoBehaviour
     [SerializeField] private Button m_btnRegistrar = null; 
     public void InvocarRegistro()
     {
+    // Inicia la coroutine para el proceso de registro
         StartCoroutine(Registrar());
     }
 
