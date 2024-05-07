@@ -20,6 +20,7 @@ public class TestingKeys : MonoBehaviour
             Debug.Log("Using Keycode. You can use this to make the player jump");
         }
 
+        // Si se presiona el botón de salto
         if (Input.GetButtonDown("Jump")) {
             Debug.Log("Using Jump. You can use this to make the player jump");
         }
