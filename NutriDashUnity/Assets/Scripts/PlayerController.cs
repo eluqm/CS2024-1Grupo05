@@ -13,6 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
     public Transform groundCheck;
     // Capa en la que se encuentra el suelo.
     public LayerMask groundLayer;
+    // Radio del círculo de verificación de suelo.
     public float groundCheckRadius;
 
     // References
