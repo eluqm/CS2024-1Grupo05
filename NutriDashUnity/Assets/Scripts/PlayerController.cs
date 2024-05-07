@@ -9,6 +9,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Fuerza del salto del personaje.
     public float jumpForce = 2.5f;
 
+    // Transform del objeto que verifica si el personaje está en el suelo.
     public Transform groundCheck;
     public LayerMask groundLayer;
     public float groundCheckRadius;
