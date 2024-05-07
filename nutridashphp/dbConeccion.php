@@ -11,6 +11,7 @@ try{
     // Captura de la excepción PDOException lanzada por un error en la base de datos
     // Imprime un mensaje de error personalizado seguido del mensaje de la excepción real
     echo "ERROR CONECTING TO DATABASE". $e->getMessage();
+     // Termina el script PHP inmediatamente para evitar continuar después de un error fatal
     exit();
 }   
 
