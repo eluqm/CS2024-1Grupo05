@@ -29,6 +29,7 @@ public class MenuInicialScript : MonoBehaviour
 
     public void Salir()
     {
+        // Muestra un mensaje en la consola de Unity
         Debug.Log("Salir........");
         Application.Quit();
     }
