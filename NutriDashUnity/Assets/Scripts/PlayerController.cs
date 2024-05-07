@@ -35,6 +35,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         // Obtiene el Rigidbody2D del objeto.
         _rigidbody = GetComponent<Rigidbody2D>();
+        // Obtiene el Animator del objeto.
         _animator = GetComponent<Animator>();
     }
     // Start is called before the first frame update
