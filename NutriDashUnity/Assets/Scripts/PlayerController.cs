@@ -19,6 +19,7 @@ public class NewBehaviourScript : MonoBehaviour
     // References
     // Referencia al Rigidbody2D del personaje.
     private Rigidbody2D _rigidbody;
+    // Referencia al Animator del personaje.
     private Animator _animator;
 
     // Movement
