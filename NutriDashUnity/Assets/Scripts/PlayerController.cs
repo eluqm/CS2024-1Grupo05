@@ -25,6 +25,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Movement
     // Vector que almacena la dirección del movimiento.
     private Vector2 _movement;
+    // Booleano que indica si el personaje está mirando hacia la derecha.
     private bool _facingRight = true;
     private bool _isGrounded;
 
