@@ -9,6 +9,7 @@ public class Registro : MonoBehaviour
 {
     // Referencia al campo de entrada de texto para el nombre de usuario
     [SerializeField] private TMP_InputField m_txtUusario = null;
+    // Referencia al campo de entrada de texto para la contraseña
     [SerializeField] private TMP_InputField m_txtContrasena = null;
 
     [SerializeField] private Button m_btnRegistrar = null; 
