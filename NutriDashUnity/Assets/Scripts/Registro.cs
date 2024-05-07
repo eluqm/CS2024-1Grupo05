@@ -21,6 +21,7 @@ public class Registro : MonoBehaviour
 
     IEnumerator Registrar()
     {
+        // Verifica si los campos de texto no están vacíos
         if (m_txtUusario.text != "" && m_txtContrasena.text != "")
         {
             WWWForm form = new WWWForm();
