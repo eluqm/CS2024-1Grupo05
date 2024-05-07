@@ -1,4 +1,5 @@
 <?php
+// Inclusión del archivo que contiene la configuración de la conexión a la base de datos
 include "dbConeccion.php";
 
 $nombre = $_POST['nombre'];
