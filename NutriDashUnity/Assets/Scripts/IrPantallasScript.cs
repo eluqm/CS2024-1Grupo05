@@ -8,6 +8,7 @@ public class MenuInicialScript : MonoBehaviour
     public void Jugar()
     {
         // Carga la escena con el índice especificado
+        //El indice se maneja en el build settings de unity
         SceneManager.LoadScene(1);
     }
 
