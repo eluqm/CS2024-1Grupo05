@@ -29,6 +29,7 @@ public class Registro : MonoBehaviour
             form.AddField("nombre", m_txtUusario.text);
             form.AddField("contrasena", m_txtContrasena.text);
 
+            // Crea una solicitud UnityWebRequest para enviar el formulario al servidor
             using UnityWebRequest w = UnityWebRequest.Post("http://localhost/nutridashphp/crearUsuario.php", form);
             yield return w.SendWebRequest();
 
