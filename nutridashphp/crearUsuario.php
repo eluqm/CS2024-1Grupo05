@@ -11,6 +11,7 @@ $sql = "SELECT nombre FROM jugadores WHERE nombre = :nombre";
 $stmt = $pdo->prepare($sql);
 $stmt->execute(['nombre' => $nombre]);
 
+// Verificación de si se encontró algún resultado
 if($stmt->rowCount() > 0)
 {
     $data = array('done' => false , 'message' => "Error, nombre de usuario ya existe.");
