@@ -30,6 +30,7 @@ public class TestingKeys : MonoBehaviour
         // Obtiene el valor del eje vertical (arriba/abajo)
         float vertical = Input.GetAxis("Vertical"); // -1 to 1
 
+        // Si el valor horizontal no es cero
         if (horizontal < 0f || horizontal > 0f) {
             Debug.Log("Horizontal axis is " + horizontal);
         }
