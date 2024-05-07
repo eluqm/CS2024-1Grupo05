@@ -14,6 +14,7 @@ $stmt->execute(['nombre' => $nombre]);
 // Verificación de si se encontró algún resultado
 if($stmt->rowCount() > 0)
 {
+    // Si el nombre de usuario ya existe, se envía una respuesta indicando el error
     $data = array('done' => false , 'message' => "Error, nombre de usuario ya existe.");
     Header('Content-Type: application/json');
     echo json_encode($data);
