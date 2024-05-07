@@ -17,6 +17,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float groundCheckRadius;
 
     // References
+    // Referencia al Rigidbody2D del personaje.
     private Rigidbody2D _rigidbody;
     private Animator _animator;
 
