@@ -31,6 +31,7 @@ public class MenuInicialScript : MonoBehaviour
     {
         // Muestra un mensaje en la consola de Unity
         Debug.Log("Salir........");
+        // Cierra la aplicación
         Application.Quit();
     }
 }
