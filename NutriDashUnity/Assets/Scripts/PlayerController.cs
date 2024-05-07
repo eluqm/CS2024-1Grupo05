@@ -54,9 +54,13 @@ public class NewBehaviourScript : MonoBehaviour
         _movement = new Vector2(horizontalInput, 0f);
         
         // Flip Character
+        // Si la entrada horizontal es negativa y el personaje mira hacia la derecha.
         if (horizontalInput < 0f && _facingRight == true) {
+            // Voltea el personaje.
             Flip();
+        // Si la entrada horizontal es positiva y el personaje no mira hacia la derecha.
         } else if (horizontalInput > 0f && _facingRight == false) {
+            // Voltea el personaje.
             Flip();
         }
 
