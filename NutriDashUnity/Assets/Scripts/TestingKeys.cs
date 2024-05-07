@@ -37,6 +37,7 @@ public class TestingKeys : MonoBehaviour
         }
         // Si el valor vertical no es cero
         if (vertical <0f || vertical > 0f) {
+        // Imprime un mensaje en la consola con el valor del eje vertical.
             Debug.Log("Vertical axis is" + vertical);
         }
     }
