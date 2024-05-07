@@ -30,6 +30,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Booleano que indica si el personaje está en el suelo.
     private bool _isGrounded;
 
+    // Método Awake, se llama cuando se inicializa el objeto.
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
