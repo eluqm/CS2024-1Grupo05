@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    // Velocidad del personaje.
     public float speed = 2.5f;
     public float jumpForce = 2.5f;
 
