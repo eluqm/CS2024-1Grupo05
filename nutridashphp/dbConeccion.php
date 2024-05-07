@@ -5,6 +5,7 @@ try{
     $pdo = new PDO('mysql:host=localhost;dbname=pruebadash', 'admin', '1234');
     // Configuración del modo de error de PDO para lanzar excepciones
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Ejecución de una sentencia SQL directamente en la base de datos para configurar la codificación de caracteres
     $pdo->exec('SET NAMES "utf8"');
 }catch(PDOException $e){
     echo "ERROR CONECTING TO DATABASE". $e->getMessage();
