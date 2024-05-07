@@ -50,6 +50,7 @@ public class NewBehaviourScript : MonoBehaviour
         //Movement
         // Obtiene la entrada horizontal del teclado.
         float horizontalInput = Input.GetAxisRaw("Horizontal");
+        // Crea un vector de movimiento con la entrada horizontal.
         _movement = new Vector2(horizontalInput, 0f);
         
         // Flip Character
