@@ -27,6 +27,7 @@ public class NewBehaviourScript : MonoBehaviour
     private Vector2 _movement;
     // Booleano que indica si el personaje está mirando hacia la derecha.
     private bool _facingRight = true;
+    // Booleano que indica si el personaje está en el suelo.
     private bool _isGrounded;
 
     void Awake()
