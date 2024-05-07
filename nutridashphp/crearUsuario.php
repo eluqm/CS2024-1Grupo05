@@ -27,6 +27,7 @@ else
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['nombre' => $nombre, 'contrasena' => $contrasena]);
 
+     // Se envía una respuesta indicando el éxito del registro
     $data = array('done' => true , 'message' => "Registro exitoso.");
     Header('Content-Type: application/json');
     echo json_encode($data);
