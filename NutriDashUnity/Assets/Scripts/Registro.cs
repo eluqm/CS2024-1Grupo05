@@ -36,6 +36,7 @@ public class Registro : MonoBehaviour
             // Verifica si la solicitud fue exitosa
             if (w.result != UnityWebRequest.Result.Success)
             {
+            // Si no fue exitosa, muestra un error
                 Debug.LogError(w.error);
             }
             else
