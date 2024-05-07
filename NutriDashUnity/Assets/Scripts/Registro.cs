@@ -55,6 +55,7 @@ public class Registro : MonoBehaviour
         }
         else
         {
+        // Si los campos de texto están vacíos, muestra un mensaje de error
             Debug.Log("Los cuadros de texto no deben estar vacios.");
         }
     }
