@@ -5,6 +5,11 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     public float speed = 2.5f;
+    public float jumpForce = 2.5f;
+
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+    public float groundCheckRadius;
 
     // References
     private Rigidbody2D _rigidbody;
@@ -13,6 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Movement
     private Vector2 _movement;
     private bool _facingRight = true;
+    private bool _isGrounded;
 
     void Awake()
     {
@@ -38,6 +44,15 @@ public class NewBehaviourScript : MonoBehaviour
         } else if (horizontalInput > 0f && _facingRight == false) {
             Flip();
         }
+
+        // Is Grounded?
+        _isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+        // Is Jumping?
+        if (Input.GetButtonDown("Jump") && _isGrounded == true) {
+            _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+
     }
 
     void FixedUpdate()
@@ -48,7 +63,9 @@ public class NewBehaviourScript : MonoBehaviour
 
     void LateUpdate()
     {
-        _animator.SetBool("Idle", _movement == Vector2.zero);   
+        _animator.SetBool("Idle", _movement == Vector2.zero);
+        _animator.SetBool("IsGrounded", _isGrounded);
+        _animator.SetFloat("VerticalVelocity", _rigidbody.velocity.y);
     }
 
     private void Flip()
