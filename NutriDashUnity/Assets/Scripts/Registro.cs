@@ -41,7 +41,7 @@ public class Registro : MonoBehaviour
             }
             else
             {
-                // Aquí es donde verificas la respuesta del servidor
+                // Si fue exitosa, procesa la respuesta del servidor
                 string response = w.downloadHandler.text;
                 if (response.Contains("exito")) // Asumiendo que tu servidor devuelve "exito" en caso de éxito
                 {
