@@ -23,6 +23,7 @@ public class NewBehaviourScript : MonoBehaviour
     private Animator _animator;
 
     // Movement
+    // Vector que almacena la dirección del movimiento.
     private Vector2 _movement;
     private bool _facingRight = true;
     private bool _isGrounded;
