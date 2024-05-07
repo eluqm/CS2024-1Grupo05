@@ -32,6 +32,7 @@ public class TestingKeys : MonoBehaviour
 
         // Si el valor horizontal no es cero
         if (horizontal < 0f || horizontal > 0f) {
+        // Imprime un mensaje en la consola con el valor del eje horizontal
             Debug.Log("Horizontal axis is " + horizontal);
         }
         if (vertical <0f || vertical > 0f) {
