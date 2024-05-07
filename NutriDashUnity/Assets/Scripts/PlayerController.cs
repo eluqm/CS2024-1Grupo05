@@ -48,6 +48,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         //Movement
+        // Obtiene la entrada horizontal del teclado.
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         _movement = new Vector2(horizontalInput, 0f);
         
