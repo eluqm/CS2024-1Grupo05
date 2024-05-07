@@ -22,6 +22,7 @@ if($stmt->rowCount() > 0)
 }
 else
 {
+    // Si el nombre de usuario no existe, se procede a insertar el nuevo registro
     $sql = "INSERT INTO jugadores SET nombre = :nombre, contrasena = :contrasena";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['nombre' => $nombre, 'contrasena' => $contrasena]);
