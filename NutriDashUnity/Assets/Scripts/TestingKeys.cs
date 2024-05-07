@@ -25,6 +25,7 @@ public class TestingKeys : MonoBehaviour
             Debug.Log("Using Jump. You can use this to make the player jump");
         }
 
+        // Obtiene el valor del eje horizontal (izquierda/derecha)
         float horizontal = Input.GetAxis("Horizontal"); //-1 to 1
         float vertical = Input.GetAxis("Vertical"); // -1 to 1
 
