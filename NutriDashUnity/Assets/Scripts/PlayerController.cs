@@ -33,6 +33,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Método Awake, se llama cuando se inicializa el objeto.
     void Awake()
     {
+        // Obtiene el Rigidbody2D del objeto.
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
     }
