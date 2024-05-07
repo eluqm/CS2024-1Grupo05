@@ -12,6 +12,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     // Movement
     private Vector2 _movement;
+    private bool _facingRight = true;
 
     void Awake()
     {
@@ -27,8 +28,16 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Movement
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-        _movement = new Vector2(horizontalInput, 0f);        
+        _movement = new Vector2(horizontalInput, 0f);
+        
+        // Flip Character
+        if (horizontalInput < 0f && _facingRight == true) {
+            Flip();
+        } else if (horizontalInput > 0f && _facingRight == false) {
+            Flip();
+        }
     }
 
     void FixedUpdate()
@@ -40,5 +49,13 @@ public class NewBehaviourScript : MonoBehaviour
     void LateUpdate()
     {
         _animator.SetBool("Idle", _movement == Vector2.zero);   
+    }
+
+    private void Flip()
+    {
+        _facingRight = !_facingRight;
+        float localScaleX = transform.localScale.x;
+        localScaleX = localScaleX * -1f;
+        transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }
 }
