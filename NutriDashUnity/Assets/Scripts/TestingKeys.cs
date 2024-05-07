@@ -16,6 +16,7 @@ public class TestingKeys : MonoBehaviour
         // Obtener eventos de teclado
         // Si se presiona la tecla de espacio.
         if (Input.GetKeyDown(KeyCode.Space)) {
+        // Imprime un mensaje en la consola.
             Debug.Log("Using Keycode. You can use this to make the player jump");
         }
 
