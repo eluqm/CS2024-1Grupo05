@@ -7,6 +7,7 @@ using UnityEngine.Networking;
 
 public class Registro : MonoBehaviour
 {
+    // Referencia al campo de entrada de texto para el nombre de usuario
     [SerializeField] private TMP_InputField m_txtUusario = null;
     [SerializeField] private TMP_InputField m_txtContrasena = null;
 
@@ -33,11 +34,11 @@ public class Registro : MonoBehaviour
             }
             else
             {
-                // Aquí es donde verificas la respuesta del servidor
+                // AquÃ­ es donde verificas la respuesta del servidor
                 string response = w.downloadHandler.text;
-                if (response.Contains("exito")) // Asumiendo que tu servidor devuelve "exito" en caso de éxito
+                if (response.Contains("exito")) // Asumiendo que tu servidor devuelve "exito" en caso de Ã©xito
                 {
-                    Debug.Log("La conexión a la base de datos fue exitosa.");
+                    Debug.Log("La conexiÃ³n a la base de datos fue exitosa.");
                 }
                 else
                 {
