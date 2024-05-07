@@ -2,6 +2,7 @@
 // Inclusión del archivo que contiene la configuración de la conexión a la base de datos
 include "dbConeccion.php";
 
+// Recuperación del nombre de usuario enviado a través de POST
 $nombre = $_POST['nombre'];
 $contrasena = hash('sha256', $_POST['contrasena']);
 
