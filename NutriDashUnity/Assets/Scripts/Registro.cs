@@ -33,6 +33,7 @@ public class Registro : MonoBehaviour
             using UnityWebRequest w = UnityWebRequest.Post("http://localhost/nutridashphp/crearUsuario.php", form);
             yield return w.SendWebRequest();
 
+            // Verifica si la solicitud fue exitosa
             if (w.result != UnityWebRequest.Result.Success)
             {
                 Debug.LogError(w.error);
