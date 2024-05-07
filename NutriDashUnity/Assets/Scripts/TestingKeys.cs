@@ -27,6 +27,7 @@ public class TestingKeys : MonoBehaviour
 
         // Obtiene el valor del eje horizontal (izquierda/derecha)
         float horizontal = Input.GetAxis("Horizontal"); //-1 to 1
+        // Obtiene el valor del eje vertical (arriba/abajo)
         float vertical = Input.GetAxis("Vertical"); // -1 to 1
 
         if (horizontal < 0f || horizontal > 0f) {
