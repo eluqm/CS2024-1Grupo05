@@ -47,7 +47,9 @@ La obesidad infantil y de adolescentes está en aumento en el Perú, donde se ob
 ## Tecnologías Usadas
 
 * C#
-* Unity 
+* Unity
+* WampServer
+   
 ## Interfaz del Proyecto
 - ## Desarrollo
 - ### Funcionalidades
