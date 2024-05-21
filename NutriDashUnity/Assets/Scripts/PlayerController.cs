@@ -108,6 +108,21 @@ public class Player : MonoBehaviour
         Debug.Log($"Jump force reset to: {jumpForce}");  // Mensaje de depuración
     }
 
+    // Método para aplicar un aumento de velocidad
+    public void ApplySpeedBoost(float boostAmount, float duration)
+    {
+        StartCoroutine(SpeedBoostCoroutine(boostAmount, duration));
+    }
+
+    private IEnumerator SpeedBoostCoroutine(float boostAmount, float duration)
+    {
+        speed += boostAmount;
+        Debug.Log($"Speed increased to: {speed}");  // Mensaje de depuración
+        yield return new WaitForSeconds(duration);
+        speed -= boostAmount;
+        Debug.Log($"Speed reset to: {speed}");  // Mensaje de depuración
+    }
+
     // Método para agregar puntos
     public void AddPoints(int pointsToAdd)
     {
