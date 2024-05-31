@@ -125,4 +125,19 @@ public class Player : MonoBehaviour
         Debug.Log($"Speed reset to: {speed}");  // Mensaje de depuración
     }
 
- 
+    // Método para agregar puntos
+    public void AddPoints(int pointsToAdd)
+    {
+        points += pointsToAdd;
+        Debug.Log("Puntos: " + points);
+    }
+
+    // Método para aplicar daño al jugador
+    public void TakeDamage(float damageAmount)
+    {
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damageAmount);
+        }
+    }
+}
