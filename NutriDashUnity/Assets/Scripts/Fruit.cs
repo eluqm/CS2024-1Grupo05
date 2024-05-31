@@ -32,6 +32,9 @@ public class Fruit : MonoBehaviour
                     case FruitType.SpeedBoost:
                         player.ApplySpeedBoost(amount, duration);
                         break;
+                    case FruitType.HealthDecrease:
+                        player.TakeDamage(amount); // Disminuir la salud del jugador
+                        break;
                 }
             }
             Destroy(gameObject);
