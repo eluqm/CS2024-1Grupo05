@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     // References
     private Rigidbody2D _rigidbody;
     private Animator _animator;
+    public PlayerHealth playerHealth; // Añadir referencia a PlayerHealth
 
     // Movement
     private Vector2 _movement;
@@ -124,10 +125,4 @@ public class Player : MonoBehaviour
         Debug.Log($"Speed reset to: {speed}");  // Mensaje de depuración
     }
 
-    // Método para agregar puntos
-    public void AddPoints(int pointsToAdd)
-    {
-        points += pointsToAdd;
-        Debug.Log("Puntos: " + points);
-    }
-}
+ 
