@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-   void Start()
+    public HealthBar healthBar;
+    public float maxHealth = 100f;
+    private float currentHealth;
+
+    void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -16,5 +20,29 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(currentHealth);
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        healthBar.SetHealth(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        healthBar.SetHealth(currentHealth);
+    }
+
+    void Die()
+    {
+        Debug.Log("Player Died");
     }
 }
