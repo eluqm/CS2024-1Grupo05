@@ -118,10 +118,10 @@ La obesidad infantil y de adolescentes está en aumento en el Perú, donde se ob
   ### Mockup 10 (Implementación - Pantalla Jugar Nivel 0_1)
   ![Leyenda](/RecursosDocumentacion/mockupJuegoNivel0_1.png)
 
-  ### Mockup 11 (Implementación - Efecto de vida de alimentos en personaje)
+  ### Mockup 11 (Implementación - Efecto de vida de alimentos dañinos para el jugador)
   ![Leyenda](/RecursosDocumentacion/mockup11.png)
 
-  ### Mockup 10 (Implementación - Pantalla Jugar Nivel 0_1)
-  ![Leyenda](/RecursosDocumentacion/mockupJuegoNivel0_1.png)
+  ### Mockup 12 (Implementación - Comida proteica con efecto de supersalto)
+  ![Leyenda](/RecursosDocumentacion/mockup12.png)
 
   
