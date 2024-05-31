@@ -130,5 +130,5 @@ La obesidad infantil y de adolescentes está en aumento en el Perú, donde se ob
   ### Mockup 14 (Implementación - Bebida con efecto de velocidad)
   ![Leyenda](/RecursosDocumentacion/mockup15.png)
 
-  ### Mockup 15 (Implementación - )
+  ### Mockup 15 (Implementación - Barra de salud sin vida)
   ![Leyenda](/RecursosDocumentacion/mockup14.png)
