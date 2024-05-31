@@ -10,4 +10,11 @@ public class PlayerHealth : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
+    void Update()
+    {
+        if (transform.position.y < -10)
+        {
+            TakeDamage(currentHealth);
+        }
+    }
 }
