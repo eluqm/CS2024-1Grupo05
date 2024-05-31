@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fruit : MonoBehaviour
 {
-    public enum FruitType { SpeedDecrease, Points, JumpBoost, SpeedBoost }
+    public enum FruitType { SpeedDecrease, Points, JumpBoost, SpeedBoost, HealthDecrease }
 
     public FruitType type;
     public float amount; // Cambiado a float para que pueda manejar cantidades de cambio de velocidad y salto
