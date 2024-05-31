@@ -124,4 +124,5 @@ La obesidad infantil y de adolescentes está en aumento en el Perú, donde se ob
   ### Mockup 12 (Implementación - Comida proteica con efecto de supersalto)
   ![Leyenda](/RecursosDocumentacion/mockup12.png)
 
-  
+  ### Mockup 12 (Implementación - Super Salto Prototipo1)
+  ![Leyenda](/RecursosDocumentacion/mockup13.png)
