@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        playerHealth = GetComponent<PlayerHealth>(); // Obtener referencia a PlayerHealth
     }
 
     void Update()
