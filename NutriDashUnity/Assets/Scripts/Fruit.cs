@@ -7,7 +7,7 @@ public class Fruit : MonoBehaviour
     public enum FruitType { SpeedDecrease, Points, JumpBoost, SpeedBoost, HealthDecrease }
 
     public FruitType type;
-    public float amount; // Cambiado a float para que pueda manejar cantidades de cambio de velocidad y salto
+    public float amount; // Cantidad que afecta los valores como velocidad, puntos o salud
     public float jumpDecreaseAmount; // Cantidad para disminuir el salto (para SpeedDecrease)
     public float duration = 5f; // Duración del efecto en segundos
 
