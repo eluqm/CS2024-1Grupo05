@@ -1,0 +1,15 @@
+
+# Ignorar archivos y directorios generados automáticamente
+/node_modules/
+/.vscode/
+/.idea/
+
+# Ignorar archivos compilados o generados
+*.log
+*.out
+*.class
+*.exe
+
+# Ignorar archivos específicos
+config.properties
+secrets.json
