@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class GameOverManager : MonoBehaviour
 {
     public GameObject gameOverPanel;
     public Player player; // Referencia al jugador
+    public Timer timer; // Referencia al temporizador
 
-     void Start()
+    void Start()
     {
         gameOverPanel.SetActive(false); // Asegurarse de que el panel de Game Over esté oculto al inicio
         timer.StartTimer(); // Iniciar el temporizador al iniciar el GameOverManager
