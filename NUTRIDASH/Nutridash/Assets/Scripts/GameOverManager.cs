@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 public class GameOverManager : MonoBehaviour
 {
     public GameObject gameOverPanel;
@@ -10,7 +8,7 @@ public class GameOverManager : MonoBehaviour
 
     void Start()
     {
-        gameOverPanel.SetActive(false); // Asegurarse de que el panel de Game Over esté oculto al inicio
+        gameOverPanel.SetActive(false); // Asegurarse de que el panel de Game Over estÃ© oculto al inicio
     }
 
     public void ShowGameOver()
