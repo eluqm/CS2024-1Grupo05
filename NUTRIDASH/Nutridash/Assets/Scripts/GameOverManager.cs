@@ -24,8 +24,17 @@ public class GameOverManager : MonoBehaviour
         gameOverPanel.SetActive(false); // Ocultar el panel de Game Over
     }
 
+    pu  public void Retry()
+    {
+        Time.timeScale = 1f; // Reanudar el tiempo del juego
+        player.ResetPlayer(); // Restablecer el estado del jugador
+        timer.StartTimer(); // Reiniciar el temporizador al reiniciar el juego
+        gameOverPanel.SetActive(false); // Ocultar el panel de Game Over
+    }
+
     public void Exit()
     {
         Application.Quit(); // Salir del juego
-    }
+            SceneManager.LoadScene(0);
+        }
 }
