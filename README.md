@@ -132,3 +132,6 @@ La obesidad infantil y de adolescentes está en aumento en el Perú, donde se ob
 
   ### Mockup 15 (Implementación - Barra de salud sin vida)
   ![Leyenda](/RecursosDocumentacion/mockup14.png)
+
+  ### Mockup 15 (Implementación - Menu de reintentar o salir del juego)
+  ![Leyenda](/RecursosDocumentacion/gameover.png)
