@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameObject speedDecreaseIcon;
+    public GameObject speedBoostIcon;
+    public GameObject jumpBoostIcon;
+
     public float speed = 2.5f;
-    public float jumpForce = 2.5f;
+    public float jumpForce = 5f;
+    public float thirstLossPerSecond = 1.0f;
 
     public Transform groundCheck;
     public LayerMask groundLayer;
     public float groundCheckRadius;
 
-    public Vector3 initialPosition; // Nueva variable para la posición inicial
+    public Vector3 initialPosition; // Nueva variable para la posiciÃ³n inicial
 
     // References
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     public PlayerHealth playerHealth;
+    public PlayerThirst playerThirst;
 
     // Movement
     private Vector2 _movement;
@@ -31,12 +37,15 @@ public class Player : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         playerHealth = GetComponent<PlayerHealth>();
-        initialPosition = transform.position; // Guardar la posición inicial del jugador
+        playerThirst = GetComponent<PlayerThirst>();
+        initialPosition = transform.position; // Guardar la posiciÃ³n inicial del jugador
     }
 
     void Start()
     {
         ResetPlayer(); // Asegurarse de que el jugador se inicializa correctamente
+        // Suscribirse al evento de sed baja
+        playerThirst.OnThirstLow += HandleThirstLow;
     }
 
     void Update()
@@ -44,6 +53,8 @@ public class Player : MonoBehaviour
         // Movement
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         _movement = new Vector2(horizontalInput, 0f);
+
+        HandleThirst();
 
         // Flip Character
         if (horizontalInput < 0f && _facingRight)
@@ -86,81 +97,146 @@ public class Player : MonoBehaviour
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }
 
-    // Método para reiniciar el estado del jugador
+    // MÃ©todo para reiniciar el estado del jugador
     public void ResetPlayer()
     {
         Debug.Log("Reseting Player Position");
         _rigidbody.velocity = Vector2.zero;
-        transform.position = initialPosition; // Usar la posición inicial guardada
-        speed = 2.5f; // Restablecer otros parámetros si es necesario
-        jumpForce = 2.5f;
-        _facingRight = true;
+        transform.position = initialPosition; // Usar la posiciÃ³n inicial guardada
+        speed = 2.5f; // Restablecer otros parÃ¡metros si es necesario
+        jumpForce = 5f;
         points = 0;
         playerHealth.Heal(playerHealth.maxHealth); // Restablecer la salud
-                                                   // Asegurarse de que las entradas del jugador están activas y el tiempo del juego está corriendo
+        playerThirst.IncreaseThirst(playerThirst.maxThirst);
+
+        // Restablecer orientaciÃ³n
+        if (!_facingRight)
+        {
+            Flip();
+        }
+        _facingRight = true;
+
+        // Asegurarse de que las entradas del jugador estÃ¡n activas y el tiempo del juego estÃ¡ corriendo
         Time.timeScale = 1f;
     }
 
-    // Método para aplicar una disminución de velocidad y salto
+    // MÃ©todo para aplicar una disminuciÃ³n de velocidad y salto
     public void ApplySpeedDecrease(float decreaseAmount, float jumpDecreaseAmount, float duration)
     {
         StartCoroutine(SpeedDecreaseCoroutine(decreaseAmount, jumpDecreaseAmount, duration));
+        StartCoroutine(ShowEffectIcon(speedDecreaseIcon, duration));
     }
 
     private IEnumerator SpeedDecreaseCoroutine(float decreaseAmount, float jumpDecreaseAmount, float duration)
     {
         speed -= decreaseAmount;
         jumpForce -= jumpDecreaseAmount;
-        Debug.Log($"Speed decreased to: {speed}, Jump force decreased to: {jumpForce}");  // Mensaje de depuración
+        Debug.Log($"Speed decreased to: {speed}, Jump force decreased to: {jumpForce}");  // Mensaje de depuraciÃ³n
+
+        speedDecreaseIcon.SetActive(true); // Mostrar icono de disminuciÃ³n de velocidad
         yield return new WaitForSeconds(duration);
+        speedDecreaseIcon.SetActive(false); // Ocultar el icono al finalizar el efecto
+
         speed += decreaseAmount;
         jumpForce += jumpDecreaseAmount;
-        Debug.Log($"Speed reset to: {speed}, Jump force reset to: {jumpForce}");  // Mensaje de depuración
+        Debug.Log($"Speed reset to: {speed}, Jump force reset to: {jumpForce}");  // Mensaje de depuraciÃ³n
     }
 
-    // Método para aplicar un aumento de salto
+    // MÃ©todo para aplicar un aumento de salto
     public void ApplyJumpBoost(float boostAmount, float duration)
     {
         StartCoroutine(JumpBoostCoroutine(boostAmount, duration));
+        StartCoroutine(ShowEffectIcon(jumpBoostIcon, duration));
     }
 
     private IEnumerator JumpBoostCoroutine(float boostAmount, float duration)
     {
         jumpForce += boostAmount;
-        Debug.Log($"Jump force increased to: {jumpForce}");  // Mensaje de depuración
+        Debug.Log($"Jump force increased to: {jumpForce}");  // Mensaje de depuraciÃ³n
+
+        jumpBoostIcon.SetActive(true); // Mostrar icono de aumento de salto
         yield return new WaitForSeconds(duration);
+        jumpBoostIcon.SetActive(false); // Ocultar el icono al finalizar el efecto
+
         jumpForce -= boostAmount;
-        Debug.Log($"Jump force reset to: {jumpForce}");  // Mensaje de depuración
+        Debug.Log($"Jump force reset to: {jumpForce}");  // Mensaje de depuraciÃ³n
     }
 
-    // Método para aplicar un aumento de velocidad
+    // MÃ©todo para aplicar un aumento de velocidad
     public void ApplySpeedBoost(float boostAmount, float duration)
     {
         StartCoroutine(SpeedBoostCoroutine(boostAmount, duration));
+        StartCoroutine(ShowEffectIcon(speedBoostIcon, duration));
     }
 
     private IEnumerator SpeedBoostCoroutine(float boostAmount, float duration)
     {
         speed += boostAmount;
-        Debug.Log($"Speed increased to: {speed}");  // Mensaje de depuración
+        Debug.Log($"Speed increased to: {speed}");  // Mensaje de depuraciÃ³n
+
+        speedBoostIcon.SetActive(true); // Mostrar icono de aumento de velocidad
         yield return new WaitForSeconds(duration);
+        speedBoostIcon.SetActive(false); // Ocultar el icono al finalizar el efecto
+
         speed -= boostAmount;
-        Debug.Log($"Speed reset to: {speed}");  // Mensaje de depuración
+        Debug.Log($"Speed reset to: {speed}");  // Mensaje de depuraciÃ³n
     }
 
-    // Método para agregar puntos
+    private IEnumerator ShowEffectIcon(GameObject icon, float duration)
+    {
+        icon.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        icon.SetActive(false);
+    }
+
+    // MÃ©todo para agregar puntos
     public void AddPoints(int pointsToAdd)
     {
         points += pointsToAdd;
         Debug.Log("Puntos: " + points);
     }
 
-    // Método para aplicar daño al jugador
+    // MÃ©todo para aplicar daÃ±o al jugador
     public void TakeDamage(float damageAmount)
     {
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damageAmount);
         }
+    }
+
+    public void Heal(float amountHealth)
+    {
+        if (playerHealth != null)
+        {
+            playerHealth.Heal(amountHealth);
+        }
+    }
+
+    private void HandleThirst()
+    {
+        if (IsPlayerMovingOnGround())
+        {
+            playerThirst.DecreaseThirst(thirstLossPerSecond * Time.deltaTime); // Multiplicar por deltaTime para hacerlo por segundo
+        }
+    }
+
+    public void IncreaseThirst(float amountWater)
+    {
+        if (playerThirst != null)
+        {
+            playerThirst.IncreaseThirst(amountWater);
+        }
+    }
+
+    private void HandleThirstLow()
+    {
+        playerHealth.TakeDamage(thirstLossPerSecond * Time.deltaTime);
+    }
+
+    private bool IsPlayerMovingOnGround()
+    {
+        float horizontalVelocity = Mathf.Abs(_rigidbody.velocity.x);
+        return _isGrounded && horizontalVelocity > 0.1f;
     }
 }
