@@ -1,8 +1,9 @@
 # CS2024-1Grupo05
 
 <p align="center">
-  <img src="/RecursosDocumentacion/Logo.svg" alt="TNutriDash">
+  <img src="/RecursosDocumentacion/NutriDashIcono.png" alt="TNutriDash" width="500">
 </p>
+
 <h1 align="center">NutriDash</h1>
 
 ## Tabla de Contenidos
