@@ -138,3 +138,6 @@ La obesidad infantil y de adolescentes está en aumento en el Perú, donde se ob
 
   ### Mockup 17 (Implementación - Temporizador)
   ![Leyenda](/RecursosDocumentacion/timer.png)
+
+  ### Mockup 18 (Implementación - Tutorial Controles de Movimiento)
+  ![Leyenda](/RecursosDocumentacion/Tutorial1.png)
