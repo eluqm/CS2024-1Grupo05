@@ -141,3 +141,6 @@ La obesidad infantil y de adolescentes está en aumento en el Perú, donde se ob
 
   ### Mockup 18 (Implementación - Tutorial Controles de Movimiento)
   ![Leyenda](/RecursosDocumentacion/Tutorial1.png)
+
+  ### Mockup 19 (Implementación - Tutorial Información de Frutas y Efectos)
+  ![Leyenda](/RecursosDocumentacion/Tutorial2.png)
