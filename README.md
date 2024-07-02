@@ -153,3 +153,6 @@ La obesidad infantil y de adolescentes está en aumento en el Perú, donde se ob
 
   ### Mockup 22 (Implementación - Efecto Lentitud)
   ![Leyenda](/RecursosDocumentacion/Caracol.png)
+
+  ### Mockup 23 (Implementación - Efecto SuperSalto)
+  ![Leyenda](/RecursosDocumentacion/Supersalto.png)
