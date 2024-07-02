@@ -159,3 +159,7 @@ La obesidad infantil y de adolescentes está en aumento en el Perú, donde se ob
 
   ### Mockup 24 (Implementación - Fin de Nivel)
   ![Leyenda](/RecursosDocumentacion/Meta.png)
+
+  ### Mockup 25 (Implementación - Cronometro en Decremento 3 minutos(180segundos+ 10 segundos Tutorial))
+  ![Leyenda](/RecursosDocumentacion/Cronometro.png)
+
