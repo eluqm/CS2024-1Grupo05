@@ -147,3 +147,9 @@ La obesidad infantil y de adolescentes está en aumento en el Perú, donde se ob
 
   ### Mockup 20 (Implementación - Barra Hidratación)
   ![Leyenda](/RecursosDocumentacion/Barragua.png)
+
+  ### Mockup 20 (Implementación - Barra Hidratación)
+  ![Leyenda](/RecursosDocumentacion/Barragua.png)
+
+  ### Mockup 20 (Implementación - Efecto Dash)
+  ![Leyenda](/RecursosDocumentacion/Dash.png)
